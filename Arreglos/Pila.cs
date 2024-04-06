@@ -30,5 +30,14 @@ namespace Arreglos
                 return false;
             }
         }
+    
+        public void Agregar(string dato)
+        {
+        if (EstaLleno() == true) {
+                throw new Exception("No hay espacio");
+            }
+            _arreglo[_tope] = dato;
+            _tope++;
+        }
     }
 }
