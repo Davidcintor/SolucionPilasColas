@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace Listas
 {
-    public class Pilas
+    public class Colas
     {
-        private List<string> _lista;
-        
-        public Pilas()
+        private List<string> _cola;
+
+        public Colas()
         {
-            _lista = new List<string>();
+            _cola = new List<string>();
         }
 
         public void Agregar(string dato)
         {
-            _lista.Add(dato);
+            _cola.Add(dato);
         }
 
         private bool EstaVacio()
         {
-            return (_lista.Count == 0);
+            return (_cola.Count == 0);
         }
 
         public void Eliminar()
@@ -33,7 +32,7 @@ namespace Listas
                 throw new Exception("La Lista esta vacía");
             }
 
-            _lista.RemoveAt(_lista.Count - 1);
+            _cola.RemoveAt(0);
         }
 
         public string Imprimir()
@@ -45,7 +44,7 @@ namespace Listas
                 return "Lista vacía";
             }
 
-            int listaCount = _lista.Count;
+            int listaCount = _cola.Count;
             for (int i = 0; i < listaCount; i++)
             {
                 if (i > 0)
@@ -53,12 +52,11 @@ namespace Listas
                     datos += "\n";
                 }
 
-                datos += _lista[i];
+                datos += _cola[i];
             }
 
             return datos;
         }
 
     }
-    }
-  
+}
